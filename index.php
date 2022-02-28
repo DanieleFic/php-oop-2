@@ -4,10 +4,18 @@ require_once __DIR__. "./classes/sala_speciale.php";
 require_once __DIR__. "./classes/film.php";
 require_once __DIR__. "./classes/spettacolo.php";
 
+
 $filmArr = [
     new Film("The Batman","Cinecomic","3 marzo 2022"),
     new Film("Joker","Cinecomic","3 ottobre 2019"),
 ]; 
+
+$actorArr = [
+    new Attori("mario","Rossi","3 gennaio 2022"),
+    new Attori("stefano","Marino","31 ottobre 2019"),
+];  
+
+
 
 /* 
     $film1 =  new Film("The Batman","Cinecomic","3 marzo 2022");
@@ -21,3 +29,4 @@ $filmArr = [
 
 
 var_dump($filmArr);
+
