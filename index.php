@@ -1,5 +1,6 @@
 <?php
-
+require_once __DIR__. "./classes/sala_classica.php";
+require_once __DIR__. "./classes/sala_speciale.php";
 require_once __DIR__. "./classes/film.php";
 require_once __DIR__. "./classes/spettacolo.php";
 
@@ -8,7 +9,12 @@ require_once __DIR__. "./classes/spettacolo.php";
     new Film("Joker","Cinecomic","3 ottobre 2019"),
 ]; */
 
-$film1 =  new Film("The Batman","Cinecomic","3 marzo 2022");
-$film2 =  new Film("Joker","Cinecomic","3 ottobre 2019");
+/* $film1 =  new Film("The Batman","Cinecomic","3 marzo 2022");
+$film2 =  new Film("Joker","Cinecomic","3 ottobre 2019"); */
 
-var_dump($filmArr);
+$saleArr = [
+    new Sala("Sala Azzurra","50"),
+    new Sala("Sala Rossa","60"),
+]; 
+
+var_dump($saleArr);
