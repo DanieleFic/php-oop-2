@@ -20,9 +20,7 @@ $saleArr = [
 ];  
 
 
-/* $tot_posti = 0; */
-
-
+/* echo $tot_posti; */
 
 /* var_dump("ciao",array_sum($saleArr)); */
 
@@ -59,18 +57,17 @@ array_push($filmArr[3]->attori,$actorArr[3]);
 array_push($filmArr[4]->attori,$actorArr[4]);
 
 
+
 //1) Recupera l’elenco delle sale con relative informazioni, 
 //facendo particolare attenzione alle informazioni aggiuntive per le sale immersive.
-/* var_dump($saleArr); */
+foreach($saleArr as $elemento){
+    echo "<h3>{$elemento->getInfo()}</h3><br>";
+}
 
-
-
-
-
-/* var_dump($spettacoliArray); */
-
-
-
-/* var_dump($filmArr); */
-
+//2)Recuperare la capienza totale del cinema considerando tutte le sale a disposizione.
+$capienza = 0;
+foreach($saleArr as $elemento){
+    $capienza += $elemento->getPosti();
+}
+echo "<h1>Numero posti totale delle sale :$capienza</h1>";
 

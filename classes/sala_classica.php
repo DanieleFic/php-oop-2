@@ -1,7 +1,7 @@
 <?php 
 class Sala{
-    private $nomesala;
-    private $n_posti;
+    protected $nomesala;
+    protected $n_posti;
     
 
 
@@ -12,8 +12,12 @@ class Sala{
 
 
     public function getInfo(){
-        return "{$this->nomesala} {$this->n_posti}";
+        return "Nome sala:{$this->nomesala} Capienza Sala:{$this->n_posti}";
         }
+
+        public function getPosti(){
+            return $this->n_posti;
+            }
     }
 
     
