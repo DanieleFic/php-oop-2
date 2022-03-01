@@ -12,7 +12,7 @@ class Sala{
 
 
     public function getInfo(){
-        return "Nome sala:{$this->nomesala} Capienza Sala:{$this->n_posti}";
+        return "Nome sala:{$this->nomesala} <br> Capienza Sala:{$this->n_posti}";
         }
 
         public function getPosti(){

@@ -44,9 +44,9 @@ $actorArr = [
 
 $spettacoliArray = [
     new Spettacolo("10-02-2022", "21.30",$filmArr[0],$saleArr[0]),
-    new Spettacolo("10-02-2022", "21.30",$filmArr[2],$saleArr[3]),
-    new Spettacolo("10-02-2022", "21.30",$filmArr[3],$saleArr[2]),
-    new Spettacolo("10-02-2022", "21.30",$filmArr[4],$saleArr[4]),
+    new Spettacolo("11-02-2022", "21.30",$filmArr[2],$saleArr[3]),
+    new Spettacolo("12-02-2022", "21.30",$filmArr[3],$saleArr[2]),
+    new Spettacolo("12-02-2022", "21.30",$filmArr[4],$saleArr[4]),
 ];
 
 
@@ -60,6 +60,7 @@ array_push($filmArr[4]->attori,$actorArr[4]);
 
 //1) Recupera l’elenco delle sale con relative informazioni, 
 //facendo particolare attenzione alle informazioni aggiuntive per le sale immersive.
+echo "<h1>Lista delle Sale</h1>";
 foreach($saleArr as $elemento){
     echo "<h3>{$elemento->getInfo()}</h3><br>";
 }
@@ -69,5 +70,5 @@ $capienza = 0;
 foreach($saleArr as $elemento){
     $capienza += $elemento->getPosti();
 }
-echo "<h1>Numero posti totale delle sale :$capienza</h1>";
+echo "<h1>Numero posti totale delle sale:<br>$capienza</h1>";
 

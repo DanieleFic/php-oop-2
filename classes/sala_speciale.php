@@ -15,7 +15,7 @@ class SalaSpeciale extends Sala{
     }
 
     public function getInfo(){
-        return "Nome sala:{$this->nomesala} Capienza Sala:{$this->n_posti} Effetti Sala:".implode(",",$this->effetti);
+        return "Nome sala:{$this->nomesala} <br> Capienza Sala:{$this->n_posti}<br> Effetti Sala:".implode(",",$this->effetti);
     }
 }
 
