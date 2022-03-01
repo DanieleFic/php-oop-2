@@ -13,11 +13,13 @@ class Film{
         $this->datauscita = $_datauscita;
     }
 
-    /* public function getTitolo(){
+    public function getTitolo(){
         return $this->titolo;
     }
 
-    public function setTitolo($_titolo){
+    
+
+    /* public function setTitolo($_titolo){
         $this->nome = $_titolo;
     }
 
@@ -29,9 +31,7 @@ class Film{
         $this->genere = $_genere;
     }
 
-    public function getDataUscita(){
-        return $this->datauscita;
-    }
+    
 
     public function setDataUscita($_datauscita){
         $this->datauscita = $_datauscita;

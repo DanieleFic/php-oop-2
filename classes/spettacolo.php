@@ -1,7 +1,7 @@
 <?php 
 class Spettacolo{
     private $data;
-    private $orario;
+    private $orario = [];
     private $film;
     private $sala;
     
@@ -12,5 +12,12 @@ class Spettacolo{
         $this->orario = $_orario;
         $this->film = $_film;
         $this->sala = $_sala;
+        }
+
+        public function getOrario(){
+            return $this->orario;
+        }
+        public function getData(){
+            return $this->data;
         }
     }
