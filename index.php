@@ -12,12 +12,19 @@ require_once __DIR__. "./classes/spettacolo.php";
 
 
 $saleArr = [
-    new Sala("Sala Azzurra","50"),
-    new Sala("Sala Rossa","50"),
-    new Sala("Sala Gialla","45"),
-    new SalaSpeciale("Sala Nera","45",["fumo","vibro"]),
-    new SalaSpeciale("Sala Blu","45",["fumo","vibro"]),
+    new Sala("Sala Azzurra", 50),
+    new Sala("Sala Rossa", 50),
+    new Sala("Sala Gialla",45),
+    new SalaSpeciale("Sala Nera",45,["fumo","vibro","getto d'acqua"]),
+    new SalaSpeciale("Sala Blu",45,["fumo","vibro","getto d'acqua"]),
 ];  
+
+
+/* $tot_posti = 0; */
+
+
+
+/* var_dump("ciao",array_sum($saleArr)); */
 
 $filmArr = [
     new Film("The Batman","Cinecomic","3 marzo 2022"),
@@ -38,15 +45,11 @@ $actorArr = [
 ];  
 
 $spettacoliArray = [
-
     new Spettacolo("10-02-2022", "21.30",$filmArr[0],$saleArr[0]),
     new Spettacolo("10-02-2022", "21.30",$filmArr[2],$saleArr[3]),
     new Spettacolo("10-02-2022", "21.30",$filmArr[3],$saleArr[2]),
     new Spettacolo("10-02-2022", "21.30",$filmArr[4],$saleArr[4]),
-
-
 ];
-
 
 
 array_push($filmArr[0]->attori,$actorArr[0]);
@@ -56,8 +59,16 @@ array_push($filmArr[3]->attori,$actorArr[3]);
 array_push($filmArr[4]->attori,$actorArr[4]);
 
 
+//1) Recupera l’elenco delle sale con relative informazioni, 
+//facendo particolare attenzione alle informazioni aggiuntive per le sale immersive.
+/* var_dump($saleArr); */
 
-var_dump($spettacoliArray);
+
+
+
+
+/* var_dump($spettacoliArray); */
+
 
 
 /* var_dump($filmArr); */
