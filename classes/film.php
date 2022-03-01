@@ -4,7 +4,7 @@ class Film{
     private $titolo;
     private $genere;
     private $datauscita;
-    private $attori = [];
+    public $attori = [];
 
 
     public function __construct($_titolo,$_genere,$_datauscita){
@@ -39,3 +39,4 @@ class Film{
      */
 
 }
+
