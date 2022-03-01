@@ -9,4 +9,11 @@ class Sala{
         $this->nomesala = $_nomesala;
         $this->n_posti = $_n_posti;
         }
+
+
+    public function getInfo(){
+        return "{$this->nomesala} {$this->n_posti}";
+        }
     }
+
+    

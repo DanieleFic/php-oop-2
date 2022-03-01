@@ -14,6 +14,8 @@ class SalaSpeciale extends Sala{
         
     }
 
-
-
+    public function getInfo(){
+        return "{$this->nomesala} {$this->n_posti} [{$this->effetti}]";
+    }
 }
+
