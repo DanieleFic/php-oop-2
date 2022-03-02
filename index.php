@@ -25,11 +25,11 @@ $saleArr = [
 /* var_dump("ciao",array_sum($saleArr)); */
 
 $filmArr = [
-    new Film("The Batman","Cinecomic","3 marzo 2022"),
-    new Film("Joker","Cinecomic","3 ottobre 2019"),
-    new Film("Quarto potere","Drammatico","19 gennaio 1949"),
-    new Film("Pirati dei Caraibi - Oltre i confini del mare","Fantasy","7 maggio 2011"),
-    new Film("Forrest Gump","Drammatico","6 ottobre 1994"),
+    new Film("The Batman","Cinecomic","3 marzo 2022","120"),
+    new Film("Joker","Cinecomic","3 ottobre 2019","140"),
+    new Film("Quarto potere","Drammatico","19 gennaio 1949","130"),
+    new Film("Pirati dei Caraibi - Oltre i confini del mare","Fantasy","7 maggio 2011","150"),
+    new Film("Forrest Gump","Drammatico","6 ottobre 1994","140"),
 ]; 
 
 
@@ -46,7 +46,8 @@ $spettacoliArray = [
     new Spettacolo("10-02-2022", ["10.30", "15.30","21.30"],$filmArr[0],$saleArr[0]),
     new Spettacolo("11-02-2022", ["10.30", "15.30","21.30"],$filmArr[2],$saleArr[3]),
     new Spettacolo("12-02-2022", ["10.30", "15.30","21.30"],$filmArr[3],$saleArr[2]),
-    new Spettacolo("12-02-2022", ["10.30", "15.30","21.30"],$filmArr[4],$saleArr[4]),
+    new Spettacolo("02-03-2022", ["10.30", "15.30","21.30"],$filmArr[4],$saleArr[4]),
+    new Spettacolo("02-03-2022", ["10.30", "15.30","21.30"],$filmArr[4],$saleArr[4]),
 ];
 
 
@@ -85,8 +86,74 @@ for ($i=0; $i < (count($spettacoliArray[0]->getOrario())); $i++) {
 echo "<h1>Es 3 </h1>  <br>";
 echo "<h1>Il film:"." ".$filmArr[0]->getTitolo()." "."Nel Giorno"." ".$spettacoliArray[0]->getData()." "."verrà proiettato:"." "."$numeroproiezioni"." "."Volte.</h1>";
 
+
+
 //4)Stabilito un giorno,
 // recupera l’orario di fine dell’ultimo spettacolo.
 echo "<h1>Es 4 </h1>  <br>";
-echo "<h1>L'ultimo spettacolo del giorno:"." ".$spettacoliArray[0]->getData()." "."è alle ore"." ".end($spettacoliArray[0]->getOrario());
+/* $s = $filmArr[0]->getDurata(); */
+/* $duratafilm = strtotime($filmArr[0]->getDurata()); */
+
+
+/* $spettacoloOdierno = null; */
+/* foreach($spettacoliArray as $spettacolo){
+    if ($spettacolo->getData() == $dataOggi){
+        $spettacoloOdierno = $spettacolo ;
+    }
+    
+} */
+
+
+
+
+
+$spettacoliOdierni = array_filter($spettacoliArray,function($elemento){
+    
+    $dataOggi = date('d-m-Y'); 
+
+    return $elemento->getData() == $dataOggi;
+    
+    /* var_dump($spettacoliOdierni); */
+});
+
+
+$ultimoOrario = strtotime("00:00");
+foreach($spettacoliOdierni as $elemento){
+        
+        foreach ($elemento->getOrario() as $orario){
+            if (strtotime($orario) > $ultimoOrario ){
+                $ultimoOrario = strtotime($orario);
+            }
+        }
+}
+
+var_dump($spettacoliOdierni);
+
+/* $ultimoOrario = strtotime(max($spettacoliArray[0]->getOrario())); */
+
+echo "<br>";
+$newTime = date("H:i", strtotime("+{$filmArr[4]->getDurata()} minutes",$ultimoOrario ));
+
+
+echo "La proiezione del film"." ".$filmArr[4]->getTitolo()." "."Termina alle ore:"." ".$newTime;
+
+
+
+
+
+
+/* $tempoFilm = date("i", strtotime($filmArr[0]->getDurata())); */
+/* echo "<br>";
+/* echo date('h:i:sa', $duratafilm); */
+/* $s = '120'; */
+/* $date = strtotime($s);
+echo date('d/M/Y H:i:s', $date);
+echo "<br>"; */
+/* $sommadurate = strtotime($duratafilm) + strtotime($dataoggi);
+echo date('h:i:sa',$sommadurate);
+echo "<br>";
+echo "durata film"." ".$filmArr[0]->getDurata()." "."Minuti";  */
+
+/* echo "<h1>L'ultimo spettacolo del giorno:"." ".$spettacoliArray[0]->getData()." "."è alle ore"." ".end($spettacoliArray[0]->getOrario()); */
+
 

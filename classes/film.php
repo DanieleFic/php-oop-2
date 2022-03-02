@@ -4,18 +4,24 @@ class Film{
     private $titolo;
     private $genere;
     private $datauscita;
+    private $durata;
     public $attori = [];
 
 
-    public function __construct($_titolo,$_genere,$_datauscita){
+    public function __construct($_titolo,$_genere,$_datauscita,$_durata){
         $this->titolo = $_titolo;
         $this->genere = $_genere;
         $this->datauscita = $_datauscita;
+        $this->durata = $_durata;
     }
 
     public function getTitolo(){
         return $this->titolo;
     }
+    public function getDurata(){
+        return $this->durata;
+    }
+
 
     
 
