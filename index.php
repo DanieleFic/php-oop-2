@@ -127,7 +127,7 @@ foreach($spettacoliOdierni as $elemento){
         }
 }
 
-var_dump($spettacoliOdierni);
+/* var_dump($spettacoliOdierni); */
 
 /* $ultimoOrario = strtotime(max($spettacoliArray[0]->getOrario())); */
 
