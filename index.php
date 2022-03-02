@@ -61,6 +61,7 @@ array_push($filmArr[4]->attori,$actorArr[4]);
 //1) Recupera l’elenco delle sale con relative informazioni, 
 //facendo particolare attenzione alle informazioni aggiuntive 
 //per le sale immersive.
+echo "<h1>Es 1 </h1>  <br>";
 echo "<h1>Lista delle Sale</h1>";
 foreach($saleArr as $elemento){
     echo "<h3>{$elemento->getInfo()}</h3><br>";
@@ -72,6 +73,7 @@ $capienza = 0;
 foreach($saleArr as $elemento){
     $capienza += $elemento->getPosti();
 }
+echo "<h1>Es 2 </h1>  <br>";
 echo "<h1>Numero posti totale delle sale:<br>$capienza</h1>";
 
 //3)Stabilito un giorno e un film,
@@ -80,5 +82,11 @@ echo "<h1>Numero posti totale delle sale:<br>$capienza</h1>";
 for ($i=0; $i < (count($spettacoliArray[0]->getOrario())); $i++) { 
     $numeroproiezioni = $i + 1 ;
 }
-
+echo "<h1>Es 3 </h1>  <br>";
 echo "<h1>Il film:"." ".$filmArr[0]->getTitolo()." "."Nel Giorno"." ".$spettacoliArray[0]->getData()." "."verrà proiettato:"." "."$numeroproiezioni"." "."Volte.</h1>";
+
+//4)Stabilito un giorno,
+// recupera l’orario di fine dell’ultimo spettacolo.
+echo "<h1>Es 4 </h1>  <br>";
+echo "<h1>L'ultimo spettacolo del giorno:"." ".$spettacoliArray[0]->getData()." "."è alle ore"." ".end($spettacoliArray[0]->getOrario());
+
